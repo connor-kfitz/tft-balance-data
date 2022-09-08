@@ -1,0 +1,33 @@
+#innerNav {
+    background-color: #2d2d30;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 1350px;
+    height: 80px;
+}
+
+#innerNav h1 {
+    color: white;
+    background-color: #2d2d30;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+#navTitleCont {
+    background-color: #2d2d30;
+    margin-left: 25px;
+}
+
+#navTitleCont h1 {
+    font-weight: 400;
+}
+
+#navLinkCont {
+    background-color: #2d2d30;
+    margin-right: 25px;
+}
+
+#navLinkCont h1 {
+    margin-left: 20px;
+}
