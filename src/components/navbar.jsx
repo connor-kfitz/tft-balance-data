@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/nav.css"
 
 export default function Nav() {
@@ -7,12 +8,23 @@ export default function Nav() {
         <nav>
             <div id="innerNav" className="flex">
                 <div id="navTitleCont">
-                    <h1>TFT Data</h1>
+                    <Link to="/" id="link">
+                        <h1>TFT Data</h1>
+                    </Link>
                 </div>
                 <div id="navLinkCont" className="flex">
-                    <h1>Items</h1>
-                    <h1>Traits</h1>
-                    <h1>Statistics</h1>
+
+                    <Link to="/items" id="link">
+                        <h1>Items</h1>
+                    </Link>
+                    
+                    <Link to="/traits" id="link">
+                        <h1>Traits</h1>
+                    </Link>
+                    
+                    <Link to="/statistics" id="link">
+                        <h1>Statistics</h1>
+                    </Link>
                 </div>
             </div>
         </nav>

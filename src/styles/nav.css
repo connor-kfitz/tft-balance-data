@@ -12,6 +12,7 @@
     background-color: #2d2d30;
     font-weight: 400;
     font-size: 30px;
+    cursor: pointer;
 }
 
 #navTitleCont {
@@ -30,4 +31,9 @@
 
 #navLinkCont h1 {
     margin-left: 20px;
+}
+
+#link {
+    text-decoration: none;
+    background-color: #2d2d30;
 }
