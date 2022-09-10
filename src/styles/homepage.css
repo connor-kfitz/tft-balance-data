@@ -1,0 +1,10 @@
+#homepageCont {
+    margin: auto;
+    width: 1350px;
+}
+
+p {
+    color: white;
+    font-size: 30px;
+    margin: 25px 25px;
+}
