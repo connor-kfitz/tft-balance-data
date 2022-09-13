@@ -1,0 +1,19 @@
+#itemBalanceCont {
+    width: 1350px;
+    height: 1000px;
+    margin: 50px auto;
+}
+
+.itemCol {
+    width: 450px;
+    border: solid black 4px;
+}
+
+.itemCol h1 {
+    color: white;
+}
+
+li {
+    list-style: none;
+    /* display: inline; */
+}

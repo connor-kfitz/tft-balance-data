@@ -1,0 +1,17 @@
+.nerfItem {
+    border: solid black 2px;
+    width: 32%;
+    height: 800px;
+}
+
+.neutItem {
+    border: solid black 2px;
+    width: 32%;
+    height: 800px;
+}
+
+.buffItem {
+    border: solid black 2px;
+    width: 32%;
+    height: 800px;
+}

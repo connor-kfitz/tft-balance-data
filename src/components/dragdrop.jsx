@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import Picture from "./picture";
+import {useDrop} from "react-dnd"
+import "../styles/dragdrop.css"
 
 const ItemList = [
     {
@@ -46,14 +48,64 @@ const ItemList = [
 
 export default function DragDrop() {
 
+    const [nerfItem, setNerfItem] = useState([])
+    const [neutItem, setNeutItem] = useState([])
+
+    
+
+    const [{isOver}, drop] = useDrop(() => ({
+        accept: "image",
+        drop: (item) => addItemToBoard(item.id),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver(),
+        }),
+    }))
+
+    const addItemToBoard = (id) => {
+        console.log('First')
+        const itemList = ItemList.filter((item) => id === item.id)
+        setNerfItem([itemList[0]]);
+    };
+
+    const [{isOverTwo}, dropTwo] = useDrop(() => ({
+        accept: "image",
+        dropTwo: (item) => addItemToNeut(item.id),
+        collect: (monitor) => ({
+            isOverTwo: !!monitor.isOver(),
+        }),
+    }))
+
+    const addItemToNeut = (id) => {
+        console.log("Test")
+        const itemList = ItemList.filter((item) => id === item.id)
+        setNeutItem([itemList[0]]);
+    };
+
+    
+
     return (
         <>
         <div className="pictures"> {ItemList.map((item) => {
-            return ( <Picture url={item.url} /> )
+            return ( <Picture url={item.url} id={item.id} /> )
             })} </div>
 
-        <div className="nerfItem"></div>
-        <div className="neutItem"></div>
+        <div className="nerfItem" ref={drop}>
+            <h1>Nerf</h1>
+            {nerfItem.map((item) => {
+                return ( <Picture url={item.url} id={item.id} /> )
+
+            })}
+        </div>
+
+        <div className="neutItem" ref={dropTwo}>
+        <h1>Neut</h1>
+            {neutItem.map((item) => {
+                return ( <Picture url={item.url} id={item.id} /> )
+
+            })}
+        </div>
+
+
         <div className="buffItem"></div>
         </>
         
