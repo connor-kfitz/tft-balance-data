@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../styles/items.css"
+
+
 import { useDrop } from "react-dnd";
 
 import Item from "../components/item";
@@ -50,26 +52,25 @@ const ItemList = [
 export default function Items() {
 
     
-    const [board, setBoard] = useState([])
+    // const [board, setBoard] = useState([])
 
-    const [{ isOver }, drop] = useDrop(() => ({
-        accept: "image",
-        drop: (item) => addImageToBoard(item.id),
-        collect: (moniotr) => ({
-            isOver: !!moniotr.isOver(),
-        }),
-    }));
+    // const [{ isOver }, drop] = useDrop(() => ({
+    //     accept: "image",
+    //     drop: (item) => addImageToBoard(item.id),
+    //     collect: (moniotr) => ({
+    //         isOver: !!moniotr.isOver(),
+    //     }),
+    // }));
 
-    const addImageToBoard = (id) => {
-        const itemList = ItemList.filter((item) => id === item.id);
+    // const addImageToBoard = (id) => {
+    //     const itemList = ItemList.filter((item) => id === item.id);
 
 
-        setBoard((board) => [...board, itemList[0]]);
-    }
+    //     setBoard((board) => [...board, itemList[0]]);
+    // }
 
     return (
         <section>
-            <h1>♘</h1>
                 <div id="itemBalanceCont" className="flex">
                     <div id="nerfCol" className="itemCol">
                         <h1>Nerf</h1>
@@ -78,20 +79,38 @@ export default function Items() {
 
                             <div id="neutCol" className="itemCol">
                                 <h1>Neutral</h1>
-                                {ItemList.map((item) => {
-                                    return (
-                                            <Item url={item.url} alt={item.alt} id={item.id}/>
-                                    )
-                                })}
+
                             </div>
 
-                    <div id="buffCol" className="itemCol" ref={drop}>
+                    <div id="buffCol" className="itemCol">
                         <h1>Buff</h1>
-                            {board.map((item) => {
-                                return ( <Item url={item.url} alt={item.alt}/> )
-                            })}
                     </div>
                 </div>
         </section>
     );
 }
+
+{/* <section>
+<div id="itemBalanceCont" className="flex">
+    <div id="nerfCol" className="itemCol">
+        <h1>Nerf</h1>
+        
+    </div>
+
+            <div id="neutCol" className="itemCol">
+                <h1>Neutral</h1>
+                {ItemList.map((item) => {
+                    return (
+                            <Item url={item.url} alt={item.alt} id={item.id}/>
+                    )
+                })}
+            </div>
+
+    <div id="buffCol" className="itemCol" ref={drop}>
+        <h1>Buff</h1>
+            {board.map((item) => {
+                return ( <Item url={item.url} alt={item.alt}/> )
+            })}
+    </div>
+</div>
+</section> */}

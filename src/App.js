@@ -1,5 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { DndContext } from '@dnd-kit/core';
+
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
@@ -12,7 +15,8 @@ import Statistics from './pages/statistics';
 
 function App() {
   return (
-    <DndProvider backend={HTML5Backend}>
+
+    <DndContext>
       <div className="App">
         <Router>
           <Nav/>
@@ -24,7 +28,7 @@ function App() {
             </Routes>
         </Router>
       </div>
-    </DndProvider>
+    </DndContext>
   );
 }
 
