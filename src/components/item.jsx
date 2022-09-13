@@ -1,17 +1,35 @@
 import React from "react";
-import {useDrag} from "react-dnd";
+import {useSortable} from '@dnd-kit/sortable';
+import {CSS} from '@dnd-kit/utilities';
 
+export default function Item(props) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition
+  } = useSortable({ id: props.id });
 
-export default function Picture({url, alt, id}) {
-    const [{isDragging}, drag] = useDrag(() => ({
-        type: "image",
-        item: {id: id},
-        collect: (monitor) => ({
-            isDragging: !!monitor.isDragging(),
-        }),
-    }))
+  const itemStyle = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    width: 110,
+    height: 30,
+    display: "flex",
+    alignItems: "center",
+    paddingLeft: 5,
+    border: "1px solid gray",
+    borderRadius: 5,
+    marginBottom: 5,
+    userSelect: "none",
+    cursor: "grab",
+    boxSizing: "border-box"
+  };
 
     return (
-        <img ref={drag} src={url} alt={alt} width="73px" style={{border: isDragging ? "5px solid pink" : "0px"}}/>
-    );
+      <div style={itemStyle} ref={setNodeRef} {...attributes} {...listeners}>
+        Item {props.id}
+      </div>
+      );
 }
