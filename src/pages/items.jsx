@@ -51,8 +51,8 @@ const wrapperStyle = {
   
 export default function Items() {
     const [items, setItems] = useState({
-        NerfCont: ["1", "2", "3", "4", "5", "6", "7", "8", "10"],
-        NeutralCont: ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"],
+        NerfCont: ["1", "2", "3", "4", "5", "6", "7", "8", "10", "11", "12", "13"],
+        NeutralCont: ["14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"],
         BuffCont: [],
     });
     const [activeId, setActiveId] = useState();
@@ -68,7 +68,6 @@ export default function Items() {
 
 return (
 
-    <div id="sortCont">
         <div style={wrapperStyle}>
         <DndContext
         announcements={defaultAnnouncements}
@@ -78,12 +77,24 @@ return (
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-            <Container id="NerfCont" items={items.NerfCont} />
-            <Container id="NeutralCont" items={items.NeutralCont} />
-            <Container id="BuffCont" items={items.BuffCont} />
+    <div id="sortItemCont" className="flex">
+
+            <div id="nerfItemCont" className="itemCont">
+                <h1>Nerf Items</h1>
+                <Container id="NerfCont" items={items.NerfCont} />
+            </div>
+            <div id="neutralItemCont" className="itemCont">
+                <h1>Balanced Items</h1>
+                <Container id="NeutralCont" items={items.NeutralCont} />
+            </div >
+            <div id="buffItemCont" className="itemCont">
+                <h1>Buff Items</h1>
+                <Container id="BuffCont" items={items.BuffCont} />
+            </div>
             <DragOverlay>{activeId ? <Item id={activeId} /> : null}</DragOverlay>
+            </div>
+
         </DndContext>
-    </div>
     </div>
 );
 
@@ -187,3 +198,4 @@ function findContainer(id) {
 
 }
 
+// "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"

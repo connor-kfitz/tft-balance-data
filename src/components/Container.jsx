@@ -6,11 +6,9 @@ import { SortableItem } from "./SortableItem";
 
 const containerStyle = {
   display: "grid",
-  gridTemplateColumns: "repeat(6, 102px)",
-  gridTemplateRows: "repeat(6, 102px)",
+  gridTemplateColumns: "repeat(4, 90px)",
   background: "#2d2d30",
   padding: 20,
-  margin: 20,
   gridGap: 0,
 };
 

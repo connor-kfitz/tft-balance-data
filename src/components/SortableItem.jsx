@@ -190,8 +190,8 @@ export function Item(props) {
   const { id } = props;
 
   const style = {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -202,9 +202,6 @@ export function Item(props) {
     backgroundColor: 'grey',
     margin: '0',
   };
-
-  console.log(parseInt(id) - 1)
-  console.log(itemList[(parseInt(id)-1)].url);
 
 
   return <div style={style}></div>;
