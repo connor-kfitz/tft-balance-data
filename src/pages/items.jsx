@@ -1,37 +1,37 @@
 import React, { useState } from "react";
 import "../styles/items.css"
 
-import NerfItem from "../components/NerfItem";
-import NeutralItem from "../components/NeutralItem";
-import BuffItem from "../components/BuffItem";
-import Item from "../components/item";
-
 import {
     DndContext,
+    closestCenter,
     KeyboardSensor,
     PointerSensor,
     useSensor,
-    useSensors
-  } from "@dnd-kit/core";
-import { sortableKeyboardCoordinates } from "@dnd-kit/sortable";
+    useSensors,
+} from '@dnd-kit/core';
+import {
+    arrayMove,
+    SortableContext,
+    sortableKeyboardCoordinates,
+    rectSortingStrategy,
+} from '@dnd-kit/sortable';
 
-import { arrayMove, insertAtIndex, removeAtIndex } from "../utils/array";
-
-
+import { SortableItem } from "../components/SortableItem";
+  
 
 const ItemList = [
     {
-        id: 1,
+        id: '1',
         url: "https://www.mobafire.com/images/tft/set7/item/icon/deathblade.png",
         alt: "Deathblade"
     },
     {
-        id: 2,
+        id: '2',
         url: "https://www.mobafire.com/images/tft/set7/item/icon/giant-slayer.png",
         alt: "Giant Slayer" 
     },
     {
-        id: 3,
+        id: '3',
         url: "https://www.mobafire.com/images/tft/set7/item/icon/edge-of-night.png",
         alt: "Edge of Night" 
     },
@@ -63,118 +63,78 @@ const ItemList = [
 ]
 
 export default function Items() {
+    const [items, setItems] = useState([
+        {
+            id: '1',
+            url: "https://www.mobafire.com/images/tft/set7/item/icon/deathblade.png",
+            alt: "Deathblade"
+        },
+        {
+            id: '2',
+            url: "https://www.mobafire.com/images/tft/set7/item/icon/giant-slayer.png",
+            alt: "Giant Slayer" 
+        },
+        {
+            id: '3',
+            url: "https://www.mobafire.com/images/tft/set7/item/icon/edge-of-night.png",
+            alt: "Edge of Night" 
+        },
+      ]);
 
-const [items, setItems] = useState({
-    group1: ["1", "2", "3"],
-    group2: ["4", "5", "6"],
-    group3: ["7", "8", "9"]
-    });
-
-const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-        coordinateGetter: sortableKeyboardCoordinates
-    })
-    );
-
-const handleDragOver = ({ over, active }) => {
-    const overId = over?.id;
-
-    if (!overId) {
-        return;
-    }
-
-    const activeContainer = active.data.current.sortable.containerId;
-    const overContainer = over.data.current?.sortable.containerId;
-
-    if (!overContainer) {
-        return;
-    }
-
-    if (activeContainer !== overContainer) {
-        setItems((items) => {
-        const activeIndex = active.data.current.sortable.index;
-        const overIndex = over.data.current?.sortable.index || 0;
-
-        return moveBetweenContainers(
-            items,
-            activeContainer,
-            activeIndex,
-            overContainer,
-            overIndex,
-            active.id
-        );
-        });
-    }
-    };
-
-    const handleDragEnd = ({ active, over }) => {
-        if (!over) {
-          return;
-        }
-    
-        if (active.id !== over.id) {
-          const activeContainer = active.data.current.sortable.containerId;
-          const overContainer = over.data.current?.sortable.containerId || over.id;
-          const activeIndex = active.data.current.sortable.index;
-          const overIndex = over.data.current?.sortable.index || 0;
-    
-          setItems((items) => {
-            let newItems;
-            if (activeContainer === overContainer) {
-              newItems = {
-                ...items,
-                [overContainer]: arrayMove(
-                  items[overContainer],
-                  activeIndex,
-                  overIndex
-                )
-              };
-            } else {
-              newItems = moveBetweenContainers(
-                items,
-                activeContainer,
-                activeIndex,
-                overContainer,
-                overIndex,
-                active.id
-              );
-            }
-    
-            return newItems;
-          });
-        }
-      };
-
-    const moveBetweenContainers = (
-    items,
-    activeContainer,
-    activeIndex,
-    overContainer,
-    overIndex,
-    item
-    ) => {
-    return {
-        ...items,
-        [activeContainer]: removeAtIndex(items[activeContainer], activeIndex),
-        [overContainer]: insertAtIndex(items[overContainer], overIndex, item)
-    };
-    };
-
-    const containerStyle = { display: "flex" };
+      const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(KeyboardSensor, {
+          coordinateGetter: sortableKeyboardCoordinates,
+        }),
+      );
 
 return (
-    <DndContext
-      sensors={sensors}
-      onDragEnd={handleDragEnd}
-      onDragOver={handleDragOver}
-    >
-      <div style={containerStyle}>
-        {Object.keys(items).map((group) => (
-          <NeutralItem id={group} items={items[group]} key={group} />
-        ))}
-      </div>
-    </DndContext>
+
+    <div id="sortCont">
+        <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+        >
+            <SortableContext
+            items={items.map(({id}) => id)}
+            strategy={rectSortingStrategy}
+            >
+                <Grid>
+                    {items.map((item) => (
+                    <SortableItem key={item.id} id={item.id} url={item.url} />
+                    ))}
+                </Grid>
+            </SortableContext>
+        </DndContext>
+    </div>
 );
+
+function handleDragEnd(event) {
+    const {active, over} = event;
+
+    if (active.id !== over.id) {
+      setItems((items) => {
+        const oldIndex = items.findIndex(({id}) => id === active.id);
+        const newIndex = items.findIndex(({id}) => id === over.id);
+
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  }
+}
+
+function Grid({children}) {
+  return (
+    <div
+      style={{
+        display: 'inline-grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridGap: 10,
+      }}
+    >
+      {children}
+    </div>
+  );
 
 }

@@ -22,3 +22,7 @@ li {
 #movableBlock {
     border: solid black 5px;
 }
+
+#sortCont {
+    margin: 50px 950px;
+}

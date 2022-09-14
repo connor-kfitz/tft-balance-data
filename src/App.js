@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
-import Nav from "./components/navbar";
+import Nav from "./components/Navbar";
 import Homepage from "./pages/homepage";
 import Items from "./pages/items";
 import Traits from "./pages/traits";
