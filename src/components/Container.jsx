@@ -6,8 +6,8 @@ import { SortableItem } from "./SortableItem";
 
 const containerStyle = {
   display: "grid",
-  gridTemplateColumns: "repeat(6, 1fr)",
-  background: "#dadadd",
+  gridTemplateColumns: "repeat(8, 1fr)",
+  background: "#2d2d30",
   padding: 10,
   margin: 10,
   gridGap: 0,
@@ -25,7 +25,7 @@ export default function Container(props) {
       <SortableContext id={id} items={items} strategy={rectSortingStrategy}>
         <div ref={setNodeRef} style={containerStyle}>
           {items.map((id) => (
-            <SortableItem key={id} id={id} />
+            <SortableItem key={id} id={id} url={props.url}/>
           ))}
         </div>
       </SortableContext>

@@ -51,9 +51,9 @@ const wrapperStyle = {
   
 export default function Items() {
     const [items, setItems] = useState({
-        root: ["1", "2", "3"],
-        container1: ["4", "5", "6"],
-        container2: ["7", "8", "9"],
+        NerfCont: ["1", "2", "3"],
+        NeutralCont: ["4", "5", "6"],
+        BuffCont: ["7", "8"],
     });
     const [activeId, setActiveId] = useState();
     
@@ -78,9 +78,9 @@ return (
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-            <Container id="root" items={items.root} />
-            <Container id="container1" items={items.container1} />
-            {/* <Container id="container2" items={items.container2} /> */}
+            <Container id="NerfCont" items={items.NerfCont} />
+            <Container id="NeutralCont" items={items.NeutralCont} />
+            <Container id="BuffCont" items={items.BuffCont} />
             <DragOverlay>{activeId ? <Item id={activeId} /> : null}</DragOverlay>
         </DndContext>
     </div>
@@ -187,45 +187,3 @@ function findContainer(id) {
 
 }
 
-// [
-//     {
-//         id: '1',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/deathblade.png",
-//         alt: "Deathblade"
-//     },
-//     {
-//         id: '2',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/giant-slayer.png",
-//         alt: "Giant Slayer" 
-//     },
-//     {
-//         id: '3',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/edge-of-night.png",
-//         alt: "Edge of Night" 
-//     },
-//     {
-//         id: '4',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/hextech-gunblade.png",
-//         alt: "Hextech Gunblade" 
-//     },
-//     {
-//         id: '5',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/bloodthirster.png",
-//         alt: "Bloodthirster" 
-//     },
-//     {
-//         id: '6',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/spear-of-shojin.png",
-//         alt: "Spear of Shojin" 
-//     },
-//     {
-//         id: '7',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/zekes-herald.png",
-//         alt: "Zeke's Herald" 
-//     },
-//     {
-//         id: '8',
-//         url: "https://www.mobafire.com/images/tft/set7/item/icon/infinity-edge.png",
-//         alt: "Infinity Edge" 
-//     }
-// ]
