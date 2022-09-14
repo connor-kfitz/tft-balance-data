@@ -199,7 +199,8 @@ export function Item(props) {
     backgroundImage: `url("${itemList[(parseInt(id)-1)].url}")`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: 'grey',
+    margin: '0',
   };
 
   console.log(parseInt(id) - 1)

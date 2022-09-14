@@ -6,12 +6,12 @@ import { SortableItem } from "./SortableItem";
 
 const containerStyle = {
   display: "grid",
-  gridTemplateColumns: "repeat(8, 100px)",
+  gridTemplateColumns: "repeat(6, 102px)",
+  gridTemplateRows: "repeat(6, 102px)",
   background: "#2d2d30",
   padding: 20,
   margin: 20,
   gridGap: 0,
-  flex: 1
 };
 
 export default function Container(props) {
