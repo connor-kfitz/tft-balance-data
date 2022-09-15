@@ -183,7 +183,6 @@ const itemList = [
     url: "https://www.mobafire.com/images/tft/set7/item/icon/thiefs-gloves.png",
     alt: "Theif's Gloves" 
   },
-  
 ]
 
 export function Item(props) {

@@ -28,4 +28,4 @@ export default function Container(props) {
       </div>
     </SortableContext>
   );
-  }
+}
