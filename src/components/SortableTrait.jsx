@@ -161,9 +161,9 @@ export function Trait(props) {
     justifyContent: "center",
     border: "2px solid black",
     backgroundImage: `url("${traitList[(parseInt(id)-1)].url}")`,
+    color: 'red',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundColor: 'grey',
     margin: '0',
   };
 
