@@ -1,0 +1,39 @@
+#sortTraitCont {
+    margin: 50px auto;
+    justify-content: space-between;
+    width: 1325px;
+}
+
+.traitCont {
+    height: 887px;
+    padding: 0 4px;
+    border: solid black 4px;
+    border-radius: 5px;
+    background-color: #2d2d30;
+}
+
+.sortTraitInnerCont h1 {
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-shadow: 5px 5px black;
+}
+
+#traitSubmitCont {
+    width: 1325px;
+    height: 100px;
+    margin: 0 auto;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+#traitSubmitCont button {
+    width: 100%;
+    height: 100%;
+    background-color: #2d2d30;
+    font-size: 45px;
+    color: white;
+    text-shadow: 5px 5px black;
+}
