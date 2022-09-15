@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/traits.css"
 
-
 export default function Traits() {
 
     return (

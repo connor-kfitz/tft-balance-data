@@ -5,10 +5,10 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import Nav from "./components/Navbar";
-import Homepage from "./pages/homepage";
-import Items from "./pages/items";
-import Traits from "./pages/traits";
-import Statistics from './pages/statistics';
+import Homepage from "./pages/Homepage";
+import Items from "./pages/Items";
+import Traits from "./pages/Traits";
+import Statistics from './pages/Statistics';
 
 
 function App() {

@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import "../styles/items.css"
 
-import {
-    DndContext,
-    DragOverlay,
-    closestCorners,
-    KeyboardSensor,
-    PointerSensor,
-    useSensor,
-    useSensors
-} from "@dnd-kit/core";
+import { DndContext, DragOverlay, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 import Container from "../components/Container";
@@ -19,42 +11,15 @@ const wrapperStyle = {
     display: "flex",
     flexDirection: "row"
   };
-  
-  const defaultAnnouncements = {
-    onDragStart(id) {
-      console.log(`Picked up draggable item ${id}.`);
-    },
-    onDragOver(id, overId) {
-      if (overId) {
-        console.log(
-          `Draggable item ${id} was moved over droppable area ${overId}.`
-        );
-        return;
-      }
-  
-      console.log(`Draggable item ${id} is no longer over a droppable area.`);
-    },
-    onDragEnd(id, overId) {
-      if (overId) {
-        console.log(
-          `Draggable item ${id} was dropped over droppable area ${overId}`
-        );
-        return;
-      }
-  
-      console.log(`Draggable item ${id} was dropped.`);
-    },
-    onDragCancel(id) {
-      console.log(`Dragging was cancelled. Draggable item ${id} was dropped.`);
-    }
-  };
-  
+
 export default function Items() {
+
     const [items, setItems] = useState({
         NerfCont: [],
         NeutralCont: ["1", "2", "3", "4", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"],
         BuffCont: [],
     });
+
     const [activeId, setActiveId] = useState();
     
     const sensors = useSensors(
@@ -64,13 +29,10 @@ export default function Items() {
         })
     );
 
-    console.log(items)
-
 return (
   <div>
     <div style={wrapperStyle}>
       <DndContext
-      announcements={defaultAnnouncements}
       sensors={sensors}
       collisionDetection={closestCorners}
       onDragStart={handleDragStart}
@@ -116,7 +78,6 @@ function findContainer(id) {
   function handleDragStart(event) {
     const { active } = event;
     const { id } = active;
-
     setActiveId(id);
   }
 
@@ -125,7 +86,6 @@ function findContainer(id) {
     const { id } = active;
     const { id: overId } = over;
 
-    // Find the containers
     const activeContainer = findContainer(id);
     const overContainer = findContainer(overId);
 
@@ -141,13 +101,11 @@ function findContainer(id) {
       const activeItems = prev[activeContainer];
       const overItems = prev[overContainer];
 
-      // Find the indexes for the items
       const activeIndex = activeItems.indexOf(id);
       const overIndex = overItems.indexOf(overId);
 
       let newIndex;
       if (overId in prev) {
-        // We're at the root droppable of a container
         newIndex = overItems.length + 1;
       } else {
         const isBelowLastItem =
@@ -202,5 +160,4 @@ function findContainer(id) {
 
     setActiveId(null);
   }
-
 }

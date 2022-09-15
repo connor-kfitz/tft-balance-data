@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/statistics.css"
 
-
 export default function Statistics() {
 
     return (

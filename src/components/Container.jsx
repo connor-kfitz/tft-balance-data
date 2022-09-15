@@ -19,14 +19,13 @@ export default function Container(props) {
     id
   });
 
-    return (
-      <SortableContext id={id} items={items} strategy={rectSortingStrategy}>
-        <div ref={setNodeRef} style={containerStyle}>
-          {items.map((id) => (
-            <SortableItem key={id} id={id} url={props.url}/>
-          ))}
-        </div>
-      </SortableContext>
-    );
- 
+  return (
+    <SortableContext id={id} items={items} strategy={rectSortingStrategy}>
+      <div ref={setNodeRef} style={containerStyle}>
+        {items.map((id) => (
+          <SortableItem key={id} id={id} url={props.url}/>
+        ))}
+      </div>
+    </SortableContext>
+  );
   }

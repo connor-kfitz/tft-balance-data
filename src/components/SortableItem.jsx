@@ -203,7 +203,6 @@ export function Item(props) {
     margin: '0',
   };
 
-
   return <div style={style}></div>;
 }
 
@@ -227,4 +226,3 @@ export function SortableItem(props) {
     </div>
   );
 }
-
