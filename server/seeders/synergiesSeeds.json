@@ -1,0 +1,118 @@
+[
+    {
+        "name": "Assassian",
+        "id": 1
+    },
+    {
+        "name": "Bard",
+        "id": 2
+    },
+    {
+        "name": "Bruiser",
+        "id": 3
+    },
+    {
+        "name": "Cannoneer",
+        "id": 4
+    },
+    {
+        "name": "Cavalier",
+        "id": 5
+    },
+    {
+        "name": "Dragonmancer",
+        "id": 6
+    },
+    {
+        "name": "Evoker",
+        "id": 7 
+    },
+    {
+        "name": "Guardian",
+        "id": 8
+    },
+    {
+        "name": "Mage",
+        "id": 9
+    },
+    {
+        "name": "Monolith",
+        "id": 10
+    },
+    {
+        "name": "Mystic",
+        "id": 11
+    },
+    {
+        "name": "Prodigy",
+        "id": 12
+    },
+    {
+        "name": "Shapeshifter",
+        "id": 13
+    },
+    {
+        "name": "Spell-Thief",
+        "id": 14
+    },
+    {
+        "name": "Starcaller",
+        "id": 15
+    },
+    {
+        "name": "Swiftshot",
+        "id": 16
+    },
+    {
+        "name": "Warrior",
+        "id": 17
+    },
+    {
+        "name": "Astral",
+        "id": 18
+    },
+    {
+        "name": "Darkflight",
+        "id": 19
+    },
+    {
+        "name": "Dragon",
+        "id": 20
+    },
+    {
+        "name": "Guild",
+        "id": 21
+    },
+    {
+        "name": "Jade",
+        "id": 22
+    },
+    {
+        "name": "Lagoon",
+        "id": 23
+    },
+    {
+        "name": "Mirage",
+        "id": 24
+    },
+    {
+        "name": "Ragewing",
+        "id": 25
+    },
+    {
+        "name": "Scalescorn",
+        "id": 26
+    },
+    {
+        "name": "Shimmerscale",
+        "id": 27
+    },
+    {
+        "name": "Tempest",
+        "id": 28
+    },
+    {
+        "name": "Whispers",
+        "id": 29
+    },
+]
