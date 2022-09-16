@@ -1,3 +1,4 @@
-const Profile = require('./Profile');
+const Items = require('./Items');
+const Synergies = require('./Synergies');
 
-module.exports = { Profile };
+module.exports = { Items, Synergies };
