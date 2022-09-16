@@ -1,0 +1,150 @@
+[
+  {
+    "name": "Deathblade",
+    "id" : 1
+  },
+  {
+    "name": "Giant Slayer",
+    "id": 2
+  },
+  {
+    "name": "Edge of Night",
+    "id": 3
+  },
+  {
+    "name": "Hextech Gunblade",
+    "id": 4
+  },
+  {
+    "name": "Bloodthirster",
+    "id": 5
+  },
+  {
+    "name": "Spear of Shojin",
+    "id": 6
+  },
+  {
+    "name": "Zeke's Herald",
+    "id": 7
+  },
+  {
+    "name": "Infinity Edge",
+    "id": 8
+  },
+  {
+    "name": "Rapid Firecannon",
+    "id": 9
+  },
+  {
+    "name": "Titan's Resolve",
+    "id": 10
+  },
+  {
+    "name": "Guinsoo's Rageblade",
+    "id": 11
+  },
+  {
+    "name": "Runaan's Hurricane",
+    "id": 12
+  },
+  {
+    "name": "Statikk Shiv",
+    "id": 13
+  },
+  {
+    "name": "Zz'Rot Portal",
+    "id": 14
+
+  },
+  {
+    "name": "Last Whisper",
+    "id": 15
+
+  },
+  {
+    "name": "Bramble Vest",
+    "id": 16
+
+  },
+  {
+    "name": "Locket of the Iron Solari",
+    "id": 17
+
+  },
+  {
+    "name": "Gargoyle Stoneplate",
+    "id": 18
+  },
+  {
+    "name": "Protector's Vow",
+    "id": 19
+  },
+  {
+    "name": "Sunfire Cape",
+    "id": 20
+  },
+  {
+    "name": "Shroud of Stillness",
+    "id": 21
+  },
+  {
+    "name": "Rabadon's Deathcap",
+    "id": 22
+  },
+  {
+    "name": "Ionic Spark",
+    "id": 23
+  },
+  {
+    "name": "Archangel's Staff",
+    "id": 24
+  },
+  {
+    "name": "Morellonomicon",
+    "id": 25
+  },
+  {
+    "name": "Jeweled Gauntlet",
+    "id": 26
+  },
+  {
+    "name": "Dragon's Claw",
+    "id": 27
+  },
+  {
+    "name": "Chalice of Power",
+    "id": 28
+  },
+  {
+    "name": "Zephyr",
+    "id": 29
+  },
+  {
+    "name": "Quick Silver",
+    "id": 30
+  },
+  {
+    "name": "Blue Buff",
+    "id": 31
+  },
+  {
+    "name": "Redemption",
+    "id": 32
+  },
+  {
+    "name": "Hand of Justice",
+    "id": 33
+  },
+  {
+    "name": "Warmog's Armor",
+    "id": 34
+  },
+  {
+    "name": "Banshee's Claw",
+    "id": 35
+  },
+  {
+    "name": "Theif's Gloves",
+    "id": 36
+  }
+]
