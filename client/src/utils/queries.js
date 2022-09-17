@@ -8,3 +8,12 @@ export const QUERY_ITEMS = gql`
         }
     }
 `
+
+// export const QUERY_SYNERGIES = gql`
+//     query getSynergies {
+//         synergies {
+//             name
+//             id
+//           }
+//     }
+// `

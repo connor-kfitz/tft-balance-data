@@ -19,9 +19,6 @@ export default function Container(props) {
     id
   });
 
-  console.log('test');
-  console.log(traits);
-
   return (
     <SortableContext id={id} items={traits} strategy={rectSortingStrategy}>
       <div ref={setNodeRef} style={containerStyle}>

@@ -4,8 +4,8 @@ import "../styles/items.css";
 import { DndContext, DragOverlay, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
-import ItemContainer from "../components/ItemContainer";
-import { Item } from "../components/SortableItem";
+import ItemContainer from "../components/items-components/ItemContainer";
+import { Item } from "../components/items-components/SortableItem";
 
 const wrapperStyle = {
     display: "flex",

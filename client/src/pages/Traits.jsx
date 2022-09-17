@@ -4,8 +4,8 @@ import "../styles/traits.css";
 import { DndContext, DragOverlay, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
-import TraitContainer from "../components/TraitContainer";
-import { Trait } from "../components/SortableTrait";
+import TraitContainer from "../components/synergies-components/TraitContainer";
+import { Trait } from "../components/synergies-components/SortableTrait";
 
 const wrapperStyle = {
     display: "flex",
