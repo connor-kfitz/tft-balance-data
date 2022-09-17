@@ -1,150 +1,258 @@
 [
   {
     "name": "Deathblade",
-    "id" : 1
+    "id" : 1,
+    "nerfCount": 2,
+    "neutralCount": 2,
+    "buffCount": 2
   },
   {
     "name": "Giant Slayer",
-    "id": 2
+    "id": 2,
+    "nerfCount": 1,
+    "neutralCount": 2,
+    "buffCount": 4
   },
   {
     "name": "Edge of Night",
-    "id": 3
+    "id": 3,
+    "nerfCount": 2,
+    "neutralCount": 4,
+    "buffCount": 6
   },
   {
     "name": "Hextech Gunblade",
-    "id": 4
+    "id": 4,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Bloodthirster",
-    "id": 5
+    "id": 5,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Spear of Shojin",
-    "id": 6
+    "id": 6,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Zeke's Herald",
-    "id": 7
+    "id": 7,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Infinity Edge",
-    "id": 8
+    "id": 8,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Rapid Firecannon",
-    "id": 9
+    "id": 9,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Titan's Resolve",
-    "id": 10
+    "id": 10,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Guinsoo's Rageblade",
-    "id": 11
+    "id": 11,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Runaan's Hurricane",
-    "id": 12
+    "id": 12,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Statikk Shiv",
-    "id": 13
+    "id": 13,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Zz'Rot Portal",
-    "id": 14
+    "id": 14,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
 
   },
   {
     "name": "Last Whisper",
-    "id": 15
+    "id": 15,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
 
   },
   {
     "name": "Bramble Vest",
-    "id": 16
+    "id": 16,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
 
   },
   {
     "name": "Locket of the Iron Solari",
-    "id": 17
+    "id": 17,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
 
   },
   {
     "name": "Gargoyle Stoneplate",
-    "id": 18
+    "id": 18,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Protector's Vow",
-    "id": 19
+    "id": 19,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Sunfire Cape",
-    "id": 20
+    "id": 20,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Shroud of Stillness",
-    "id": 21
+    "id": 21,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Rabadon's Deathcap",
-    "id": 22
+    "id": 22,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Ionic Spark",
-    "id": 23
+    "id": 23,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Archangel's Staff",
-    "id": 24
+    "id": 24,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Morellonomicon",
-    "id": 25
+    "id": 25,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Jeweled Gauntlet",
-    "id": 26
+    "id": 26,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Dragon's Claw",
-    "id": 27
+    "id": 27,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Chalice of Power",
-    "id": 28
+    "id": 28,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Zephyr",
-    "id": 29
+    "id": 29,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Quick Silver",
-    "id": 30
+    "id": 30,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Blue Buff",
-    "id": 31
+    "id": 31,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Redemption",
-    "id": 32
+    "id": 32,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Hand of Justice",
-    "id": 33
+    "id": 33,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Warmog's Armor",
-    "id": 34
+    "id": 34,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Banshee's Claw",
-    "id": 35
+    "id": 35,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   },
   {
     "name": "Theif's Gloves",
-    "id": 36
+    "id": 36,
+    "nerfCount": 0,
+    "neutralCount": 0,
+    "buffCount": 0
   }
 ]

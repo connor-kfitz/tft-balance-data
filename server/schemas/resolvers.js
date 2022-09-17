@@ -9,6 +9,16 @@ const resolvers = {
           return Synergy.find();
         }
       },
+
+    Mutation: {
+      addNerfItem: async(parent, { itemId }) => {
+        return Item.findOneAndUpdate(
+          { id: itemId },
+          { $inc: { nerfCount: 1 } },
+          { new: true }          
+        )
+      }
+    }
 };
 
 module.exports = resolvers;

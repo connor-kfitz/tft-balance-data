@@ -5,6 +5,9 @@ export const QUERY_ITEMS = gql`
         items {
             name
             id
+            nerfCount
+            neutralCount
+            buffCount
         }
     }
 `

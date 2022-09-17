@@ -1,0 +1,56 @@
+#statsContainer {
+    width: 1350px;
+    margin: 0 auto;
+}
+
+#itemStatCardCont {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.itemStatCard {
+    margin-top: 50px;
+    height: 150px;
+    width: 300px;
+    border: solid black 3px;
+}
+
+.itemCardImage {
+    width: 50%;
+    height: 100%;
+    border-right: solid black 3px;
+    background-size: cover;
+    background-position: center;
+}
+
+.itemCardData {
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    color: white;
+    font-size: 22px;
+}
+
+.itemNerfInfo {
+    height: 33.33%;
+    width: 100%;
+    background-color: #3e3e42;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemNeutralInfo {
+    height: 33.33%;
+    width: 100%;
+    background-color: #2d2d30;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemBuffInfo {
+    height: 33.33%;
+    width: 100%;
+    background-color: #252526;
+    justify-content: center;
+    align-items: center;
+}

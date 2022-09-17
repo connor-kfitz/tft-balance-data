@@ -6,7 +6,7 @@ const typeDefs = gql`
         name: String
         id: Int
         nerfCount: Int
-        neturalCount: Int
+        neutralCount: Int
         buffCount: Int
     }
 
@@ -15,13 +15,17 @@ const typeDefs = gql`
         name: String
         id: Int
         nerfCount: Int
-        neturalCount: Int
+        neutralCount: Int
         buffCount: Int
     }
 
     type Query {
         items: [Item]!
         synergies: [Synergy]!
+    }
+
+    type Mutation {
+        addNerfItem(itemId: Int!): Item
     }
 `;
 

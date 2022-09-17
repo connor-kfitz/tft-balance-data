@@ -6,7 +6,7 @@ import ItemContainer from "../components/statistics-components/ItemContainer";
 export default function Statistics() {
 
     return (
-        <div>
+        <div id="statsContainer">
             <ItemContainer/>
         </div>
     );

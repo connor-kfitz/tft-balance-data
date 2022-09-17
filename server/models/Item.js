@@ -13,21 +13,15 @@ const itemSchema = new Schema({
     unique: true,
     trim: true,
   },
-  nerfCount: [
-    {
+  nerfCount: {
       type: Number,
-    },
-  ],
-  neutralCount: [
-    {
+  },
+  neutralCount: {
       type: Number,
-    },
-  ],
-  buffCount: [
-    {
+  },
+  buffCount: {
       type: Number,
-    },
-  ],
+  },
 });
 
 const Item = model('Item', itemSchema);
