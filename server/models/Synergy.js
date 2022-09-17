@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const itemsSchema = new Schema({
+const synergySchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -30,6 +30,6 @@ const itemsSchema = new Schema({
   ],
 });
 
-const Items = model('Items', itemsSchema);
+const Synergy = model('Synergy', synergySchema);
 
-module.exports = Items;
+module.exports = Synergy;
