@@ -1,16 +1,16 @@
 const db = require('../config/connection');
-const { Items, Synergies } = require('../models');
+const { Item, Synergy } = require('../models');
 
-const itemsSeeds = require('./itemsSeeds.json');
-const synergiesSeeds = require('./synergiesSeeds.json');
+const itemSeeds = require('./itemSeeds.json');
+const synergySeeds = require('./synergySeeds.json');
 
 db.once('open', async () => {
-  await Items.deleteMany({});
-  await Synergies.deleteMany({});
+  await Item.deleteMany({});
+  await Synergy.deleteMany({});
 
   try {
-    await Items.create(itemsSeeds);
-    await Synergies.create(synergiesSeeds);
+    await Item.create(itemSeeds);
+    await Synergy.create(synergySeeds);
 
     console.log('all done!');
     process.exit(0);

@@ -12,7 +12,6 @@ const typeDefs = gql`
 
     type Query {
         items: [Item]!
-        profile(itemId: ID!): Item
     }
 `;
 
