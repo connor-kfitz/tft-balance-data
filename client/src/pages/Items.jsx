@@ -7,12 +7,29 @@ import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import ItemContainer from "../components/items-components/ItemContainer";
 import { Item } from "../components/items-components/SortableItem";
 
+import { useMutation } from "@apollo/client";
+import { NERF_ITEM_INCREMENT } from "../utils/mutations";
+
 const wrapperStyle = {
     display: "flex",
     flexDirection: "row"
   };
 
 export default function Items() {
+
+const [nerfItem, { error }] = useMutation(NERF_ITEM_INCREMENT);
+
+  const nerfItemFun = async () => {
+    try{
+      const { data } = await nerfItem({
+        variables: {
+          itemId: 1,
+        }
+      })
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   const [items, setItems] = useState({
       NerfCont: [],
@@ -62,7 +79,7 @@ export default function Items() {
         </DndContext>
       </div>
       <div id="itemSubmitCont">
-        <button>Submit</button>
+        <button onClick={nerfItemFun}>Submit</button>
       </div>
     </div>
   );
