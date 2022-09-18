@@ -17,8 +17,23 @@ const resolvers = {
           { $inc: { nerfCount: 1 } },
           { new: true }          
         )
-      }
-    }
+      },
+
+      addNeutralItem: async(parent, { itemId }) => {
+        return Item.findOneAndUpdate(
+          { id: itemId },
+          { $inc: { neutralCount: 1 } },
+          { new: true }          
+        )
+    },
+      addBuffItem: async(parent, { itemId }) => {
+        return Item.findOneAndUpdate(
+          { id: itemId },
+          { $inc: { buffCount: 1 } },
+          { new: true }          
+        )
+    },
+  }
 };
 
 module.exports = resolvers;

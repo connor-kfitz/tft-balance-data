@@ -26,6 +26,8 @@ const typeDefs = gql`
 
     type Mutation {
         addNerfItem(itemId: Int!): Item
+        addNeutralItem(itemId: Int!): Item
+        addBuffItem(itemId: Int!): Item
     }
 `;
 

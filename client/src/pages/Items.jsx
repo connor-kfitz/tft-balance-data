@@ -8,7 +8,7 @@ import ItemContainer from "../components/items-components/ItemContainer";
 import { Item } from "../components/items-components/SortableItem";
 
 import { useMutation } from "@apollo/client";
-import { NERF_ITEM_INCREMENT } from "../utils/mutations";
+import { NERF_ITEM_INCREMENT, NEUTRAL_ITEM_INCREMENT, BUFF_ITEM_INCREMENT } from "../utils/mutations";
 
 const wrapperStyle = {
     display: "flex",
@@ -17,18 +17,64 @@ const wrapperStyle = {
 
 export default function Items() {
 
-const [nerfItem, { error }] = useMutation(NERF_ITEM_INCREMENT);
+const [nerfItem] = useMutation(NERF_ITEM_INCREMENT);
+const [neutralItem] = useMutation(NEUTRAL_ITEM_INCREMENT);
+const [buffItem] = useMutation(BUFF_ITEM_INCREMENT);
 
-  const nerfItemFun = async () => {
+
+  async function nerfItemFunction(input) {
+
     try{
       const { data } = await nerfItem({
         variables: {
-          itemId: 1,
+          itemId: parseInt(input),
         }
       })
     } catch (err) {
       console.error(err);
     }
+  }
+
+  async function neutralItemFunction(input) {
+
+    try{
+      const { data } = await neutralItem({
+        variables: {
+          itemId: parseInt(input),
+        }
+      })
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function buffItemFunction(input) {
+
+    try{
+      const { data } = await buffItem({
+        variables: {
+          itemId: parseInt(input),
+        }
+      })
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function handleSubmit() {
+    
+    items.NerfCont.map((item) => {
+      nerfItemFunction(item)
+    })
+
+    items.NeutralCont.map((item) => {
+      neutralItemFunction(item)
+    })
+
+    items.BuffCont.map((item) => {
+      buffItemFunction(item)
+    })
+
   }
 
   const [items, setItems] = useState({
@@ -79,7 +125,7 @@ const [nerfItem, { error }] = useMutation(NERF_ITEM_INCREMENT);
         </DndContext>
       </div>
       <div id="itemSubmitCont">
-        <button onClick={nerfItemFun}>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
     </div>
   );
