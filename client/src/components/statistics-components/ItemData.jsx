@@ -6,16 +6,9 @@ import itemList from "../../data-sets/itemData";
 export default function ItemData(props) {
     const { itemData } = props;
 
-    const style = {
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-    }
-
     function checkZero(input){
-        if ((input.nerfCount + input.neutralCount + input.buffCount) == 0){
+        if ((input.nerfCount + input.neutralCount + input.buffCount) === 0){
             return true;
-        } else {
-            console.log('false');
         }
     }
 
@@ -23,8 +16,6 @@ export default function ItemData(props) {
         const string = input.toString();
         return string.slice(0,2);
     }
-
-    console.log(trimNumber(12345678))
 
     return(
         <div id="itemStatCardCont" className="flex">
