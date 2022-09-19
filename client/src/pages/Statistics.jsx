@@ -6,7 +6,7 @@ import SynergyContainer from "../components/statistics-components/SynergyContain
 
 export default function Statistics() {
 
-    const [currentPage, setCurrentPage] = useState('Synergies')
+    const [currentPage, setCurrentPage] = useState('Items')
 
     function handleChange() {
         if(currentPage === "Items"){

@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/statistics.css"
 
-import synergyList from "../../data-sets/itemData";
+import synergyList from "../../data-sets/synergyData";
 
 export default function SynergyData(props) {
     const { synergyData } = props;
@@ -20,27 +20,26 @@ export default function SynergyData(props) {
     }
 
     return(
-        // <div id="itemStatCardCont" className="flex">
-        //     {itemData.map((item) => (
-        //         <div className="itemStatCard flex">
-        //             <div className="itemCardImage" style={{backgroundImage: `url("${itemList[(item.id - 1)].url}")`}} ></div>
-        //                     {(checkZero(item)) ? (
+        <div id="itemStatCardCont" className="flex">
+            {synergyData.map((synergy) => (
+                <div className="itemStatCard flex">
+                    <div className="itemCardImage" style={{backgroundImage: `url("${synergyList[(synergy.id - 1)].url}")`}} ></div>
+                            {(checkZero(synergy)) ? (
                                 
-        //                         <div className="itemCardData flex">
-        //                             <div className="itemNerfInfo flex">0% Nerf</div>
-        //                             <div className="itemNeutralInfo flex">0% Neutral</div>
-        //                             <div className="itemBuffInfo flex">0% Buff</div>
-        //                         </div>
-        //                     ) : (
-        //                         <div className="itemCardData flex">
-        //                             <div className="itemNerfInfo flex">{trimNumber((item.nerfCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Nerf</div>
-        //                             <div className="itemNeutralInfo flex">{trimNumber((item.neutralCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Balanced</div>
-        //                             <div className="itemBuffInfo flex">{trimNumber((item.buffCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Buff</div>
-        //                         </div>
-        //                     )}
-        //         </div>
-        //     ))} 
-        // </div>
-        <div></div>
+                                <div className="itemCardData flex">
+                                    <div className="itemNerfInfo flex">0% Nerf</div>
+                                    <div className="itemNeutralInfo flex">0% Neutral</div>
+                                    <div className="itemBuffInfo flex">0% Buff</div>
+                                </div>
+                            ) : (
+                                <div className="itemCardData flex">
+                                    <div className="itemNerfInfo flex">{trimNumber((synergy.nerfCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Nerf</div>
+                                    <div className="itemNeutralInfo flex">{trimNumber((synergy.neutralCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Balanced</div>
+                                    <div className="itemBuffInfo flex">{trimNumber((synergy.buffCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Buff</div>
+                                </div>
+                            )}
+                </div>
+            ))} 
+        </div>
     )
 }
