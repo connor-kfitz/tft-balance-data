@@ -74,7 +74,6 @@ const [buffItem] = useMutation(BUFF_ITEM_INCREMENT);
     items.BuffCont.map((item) => {
       buffItemFunction(item)
     })
-
   }
 
   const [items, setItems] = useState({
