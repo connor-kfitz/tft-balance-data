@@ -10,13 +10,16 @@ export const QUERY_ITEMS = gql`
             buffCount
         }
     }
-`
+`;
 
-// export const QUERY_SYNERGIES = gql`
-//     query getSynergies {
-//         synergies {
-//             name
-//             id
-//           }
-//     }
-// `
+export const QUERY_SYNERGIES = gql`
+    query getSynergies {
+        synergies {
+            name
+            id
+            nerfCount
+            neutralCount
+            buffCount
+          }
+    }
+`;

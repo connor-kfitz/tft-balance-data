@@ -26,3 +26,30 @@ export const BUFF_ITEM_INCREMENT = gql`
     }
   }
 `;
+
+export const NERF_SYNERGY_INCREMENT = gql`
+  mutation nerfSynergyIncrement($synergyId: Int!) {
+    addNerfSynergy(synergyId: $synergyId) {
+      id
+      name
+    }
+  }
+`;
+
+export const NEUTRAL_SYNERGY_INCREMENT = gql`
+  mutation neutralSynergyIncrement($synergyId: Int!) {
+    addNeutralSynergy(synergyId: $synergyId) {
+      id
+      name
+    }
+  }
+`;
+
+export const BUFF_SYNERGY_INCREMENT = gql`
+  mutation buffSynergyIncrement($synergyId: Int!) {
+    addBuffSynergy(synergyId: $synergyId) {
+      id
+      name
+    }
+  }
+`;

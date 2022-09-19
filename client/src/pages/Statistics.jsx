@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "../styles/statistics.css"
 
 import ItemContainer from "../components/statistics-components/ItemContainer";
+import SynergyContainer from "../components/statistics-components/SynergyContainer";
 
 export default function Statistics() {
 
-    const [currentPage, setCurrentPage] = useState('Items')
+    const [currentPage, setCurrentPage] = useState('Synergies')
 
     function handleChange() {
         if(currentPage === "Items"){
@@ -28,7 +29,7 @@ export default function Statistics() {
             {(currentPage === 'Items') ? (
                 <ItemContainer/>
             ) : (
-                <div>Synergies</div>
+                <SynergyContainer/>
             )}
         </div>
     );
