@@ -28,6 +28,9 @@ const typeDefs = gql`
         addNerfItem(itemId: Int!): Item
         addNeutralItem(itemId: Int!): Item
         addBuffItem(itemId: Int!): Item
+        addNerfSynergy(synergyId: Int!): Synergy
+        addNeutralSynergy(synergyId: Int!): Synergy
+        addBuffSynergy(synergyId: Int!): Synergy
     }
 `;
 

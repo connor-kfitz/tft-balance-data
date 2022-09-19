@@ -33,6 +33,28 @@ const resolvers = {
           { new: true }          
         )
     },
+      addNerfSynergy: async(parent, { synergyId }) => {
+        return Synergy.findOneAndUpdate(
+          { id: synergyId },
+          { $inc: { nerfCount: 1 } },
+          { new: true }          
+        )
+      },
+
+      addNeutralSynergy: async(parent, { synergyId }) => {
+        return Synergy.findOneAndUpdate(
+          { id: synergyId },
+          { $inc: { neutralCount: 1 } },
+          { new: true }          
+        )
+    },
+      addBuffSynergy: async(parent, { synergyId }) => {
+        return Synergy.findOneAndUpdate(
+          { id: synergyId },
+          { $inc: { buffCount: 1 } },
+          { new: true }          
+        )
+    },
   }
 };
 
