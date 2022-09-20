@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/traits.css";
+import "../styles/synergies.css";
 
 import { DndContext, DragOverlay, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
-import TraitContainer from "../components/synergies-components/TraitContainer";
-import { Trait } from "../components/synergies-components/SortableTrait";
+import SynergyContainer from "../components/synergies-components/SynergyContainer";
+import { Synergy } from "../components/synergies-components/SortableSynergy";
 
 import { useMutation } from "@apollo/client";
 import { NERF_SYNERGY_INCREMENT, NEUTRAL_SYNERGY_INCREMENT, BUFF_SYNERGY_INCREMENT } from "../utils/mutations";
@@ -17,7 +17,7 @@ const wrapperStyle = {
     flexDirection: "row"
   };
 
-export default function Traits() {
+export default function Synergies() {
 
   const [nerfSynergy] = useMutation(NERF_SYNERGY_INCREMENT, {
     refetchQueries:[
@@ -85,15 +85,15 @@ export default function Traits() {
 
   function handleSubmit() {
     
-    traits.NerfCont.map((synergy) => {
+    synergies.NerfCont.map((synergy) => {
       nerfSynergyFunction(synergy)
     })
 
-    traits.NeutralCont.map((synergy) => {
+    synergies.NeutralCont.map((synergy) => {
       neutralSynergyFunction(synergy)
     })
 
-    traits.BuffCont.map((synergy) => {
+    synergies.BuffCont.map((synergy) => {
       buffSynergyFunction(synergy)
     })
 
@@ -101,7 +101,7 @@ export default function Traits() {
 
   }
 
-    const [traits, setTraits] = useState({
+    const [synergies, setSynergies] = useState({
         NerfCont: [],
         NeutralCont: ["1", "2", "3", "4", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"],
         BuffCont: [],
@@ -125,41 +125,41 @@ export default function Traits() {
                 onDragStart={handleDragStart}
                 onDragOver={handleDragOver}
                 onDragEnd={handleDragEnd}>
-                <div id="sortTraitCont" className="flex">
-                    <div className="sortTraitInnerCont">
-                    <h1>Nerf Traits</h1>
-                    <div id="nerfTraitCont" className="traitCont">
-                        <TraitContainer id="NerfCont" traits={traits.NerfCont} />
+                <div id="sortSynergyCont" className="flex">
+                    <div className="sortSynergyInnerCont">
+                    <h1>Nerf Synergies</h1>
+                    <div id="nerfSynergyCont" className="synergyCont">
+                        <SynergyContainer id="NerfCont" synergies={synergies.NerfCont} />
                     </div>
                     </div>
-                    <div className="sortTraitInnerCont">
-                    <h1>Balanced Traits</h1>
-                    <div id="neutralTraitCont" className="traitCont">
-                        <TraitContainer id="NeutralCont" traits={traits.NeutralCont} />
+                    <div className="sortSynergyInnerCont">
+                    <h1>Balanced Synergies</h1>
+                    <div id="neutralSynergyCont" className="synergyCont">
+                        <SynergyContainer id="NeutralCont" synergies={synergies.NeutralCont} />
                     </div >
                     </div>
-                    <div className="sortTraitInnerCont">
-                    <h1>Buff Traits</h1>
-                    <div id="buffTraitCont" className="traitCont">
-                        <TraitContainer id="BuffCont" traits={traits.BuffCont} />
+                    <div className="sortSynergyInnerCont">
+                    <h1>Buff Synergies</h1>
+                    <div id="buffSynergyCont" className="synergyCont">
+                        <SynergyContainer id="BuffCont" synergies={synergies.BuffCont} />
                     </div>
                     </div>
-                    <DragOverlay>{activeId ? <Trait id={activeId} /> : null}</DragOverlay>
+                    <DragOverlay>{activeId ? <Synergy id={activeId} /> : null}</DragOverlay>
                 </div>
                 </DndContext>
             </div>
-            <div id="traitSubmitCont">
+            <div id="synergySubmitCont">
                 <button onClick={handleSubmit}>Submit</button>
             </div>
         </div>
     );
 
     function findContainer(id) {
-        if (id in traits) {
+        if (id in synergies) {
           return id;
         }
   
-        return Object.keys(traits).find((key) => traits[key].includes(id));
+        return Object.keys(synergies).find((key) => synergies[key].includes(id));
     }
   
     function handleDragStart(event) {
@@ -184,7 +184,7 @@ export default function Traits() {
         return;
       }
   
-      setTraits((prev) => {
+      setSynergies((prev) => {
         const activeItems = prev[activeContainer];
         const overItems = prev[overContainer];
   
@@ -212,7 +212,7 @@ export default function Traits() {
           ],
           [overContainer]: [
             ...prev[overContainer].slice(0, newIndex),
-            traits[activeContainer][activeIndex],
+            synergies[activeContainer][activeIndex],
             ...prev[overContainer].slice(newIndex, prev[overContainer].length)
           ]
         };
@@ -235,13 +235,13 @@ export default function Traits() {
         return;
       }
   
-      const activeIndex = traits[activeContainer].indexOf(active.id);
-      const overIndex = traits[overContainer].indexOf(overId);
+      const activeIndex = synergies[activeContainer].indexOf(active.id);
+      const overIndex = synergies[overContainer].indexOf(overId);
   
       if (activeIndex !== overIndex) {
-        setTraits((traits) => ({
-          ...traits,
-          [overContainer]: arrayMove(traits[overContainer], activeIndex, overIndex)
+        setSynergies((synergies) => ({
+          ...synergies,
+          [overContainer]: arrayMove(synergies[overContainer], activeIndex, overIndex)
         }));
       }
   

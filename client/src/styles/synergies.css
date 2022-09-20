@@ -1,10 +1,10 @@
-#sortTraitCont {
+#sortSynergyCont {
     margin: 50px auto;
     justify-content: space-between;
     width: 1325px;
 }
 
-.traitCont {
+.synergyCont {
     height: 887px;
     padding: 0 4px;
     border: solid black 4px;
@@ -12,7 +12,7 @@
     background-color: #2d2d30;
 }
 
-.sortTraitInnerCont h1 {
+.sortSynergyInnerCont h1 {
     text-align: center;
     color: white;
     font-weight: 200;
@@ -21,7 +21,7 @@
     text-shadow: 5px 5px black;
 }
 
-#traitSubmitCont {
+#synergySubmitCont {
     width: 1325px;
     height: 100px;
     margin: 0 auto;
@@ -29,7 +29,7 @@
     border-radius: 5px;
 }
 
-#traitSubmitCont button {
+#synergySubmitCont button {
     width: 100%;
     height: 100%;
     background-color: #2d2d30;

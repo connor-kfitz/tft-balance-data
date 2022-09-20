@@ -2,7 +2,7 @@ import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-const traitList = [
+const synergyList = [
   {
       id: '1',
       url: "https://cdn.mobalytics.gg/assets/common/icons/tft-synergies-set7-5/24-assassin.svg?v=17",
@@ -150,7 +150,7 @@ const traitList = [
   },
 ]
 
-export function Trait(props) {
+export function Synergy(props) {
   const { id } = props;
 
   const style = {
@@ -160,7 +160,7 @@ export function Trait(props) {
     alignItems: "center",
     justifyContent: "center",
     border: "2px solid black",
-    backgroundImage: `url("${traitList[(parseInt(id)-1)].url}")`,
+    backgroundImage: `url("${synergyList[(parseInt(id)-1)].url}")`,
     color: 'red',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -170,7 +170,7 @@ export function Trait(props) {
   return <div style={style}></div>;
 }
 
-export function SortableTrait(props) {
+export function SortableSynergy(props) {
   const {
     attributes,
     listeners,
@@ -186,7 +186,7 @@ export function SortableTrait(props) {
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <Trait id={props.id} />
+      <Synergy id={props.id} />
     </div>
   );
 }

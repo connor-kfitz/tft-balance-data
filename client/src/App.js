@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from "./components/Navbar";
 import Homepage from "./pages/Homepage";
 import Items from "./pages/Items";
-import Traits from "./pages/Traits";
+import Synergies from "./pages/Synergies";
 import Statistics from './pages/Statistics';
 
 const client = new ApolloClient({
@@ -24,7 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage/>}/>
             <Route path="/items" element={<Items/>}/>
-            <Route path="/traits" element={<Traits/>}/>
+            <Route path="/synergies" element={<Synergies/>}/>
             <Route path="/statistics" element={<Statistics/>}/>
           </Routes>
       </Router>
