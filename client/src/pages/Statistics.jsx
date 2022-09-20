@@ -16,6 +16,11 @@ export default function Statistics() {
         }
     }
 
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
+
     return (
         <div id="statsContainer">
             <label for="stats">

@@ -11,14 +11,7 @@ export default function SynergyData(props) {
             return true;
         }
     }
-
-    console.log(synergyData);
-
-    function trimNumber(input){
-        const string = input.toString();
-        return string.slice(0,2);
-    }
-
+    
     return(
         <div id="itemStatCardCont" className="flex">
             {synergyData.map((synergy) => (
@@ -33,9 +26,9 @@ export default function SynergyData(props) {
                                 </div>
                             ) : (
                                 <div className="itemCardData flex">
-                                    <div className="itemNerfInfo flex">{trimNumber((synergy.nerfCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Nerf</div>
-                                    <div className="itemNeutralInfo flex">{trimNumber((synergy.neutralCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Balanced</div>
-                                    <div className="itemBuffInfo flex">{trimNumber((synergy.buffCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Buff</div>
+                                    <div className="itemNerfInfo flex">{Math.trunc((synergy.nerfCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Nerf</div>
+                                    <div className="itemNeutralInfo flex">{Math.trunc((synergy.neutralCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Balanced</div>
+                                    <div className="itemBuffInfo flex">{Math.trunc((synergy.buffCount / (synergy.nerfCount + synergy.neutralCount + synergy.buffCount) * 100))}% Buff</div>
                                 </div>
                             )}
                 </div>

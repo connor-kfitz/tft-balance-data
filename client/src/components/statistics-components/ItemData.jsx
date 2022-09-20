@@ -12,11 +12,6 @@ export default function ItemData(props) {
         }
     }
 
-    function trimNumber(input){
-        const string = input.toString();
-        return string.slice(0,2);
-    }
-
     return(
         <div id="itemStatCardCont" className="flex">
             {itemData.map((item) => (
@@ -31,9 +26,9 @@ export default function ItemData(props) {
                                 </div>
                             ) : (
                                 <div className="itemCardData flex">
-                                    <div className="itemNerfInfo flex">{trimNumber((item.nerfCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Nerf</div>
-                                    <div className="itemNeutralInfo flex">{trimNumber((item.neutralCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Balanced</div>
-                                    <div className="itemBuffInfo flex">{trimNumber((item.buffCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Buff</div>
+                                    <div className="itemNerfInfo flex">{Math.trunc((item.nerfCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Nerf</div>
+                                    <div className="itemNeutralInfo flex">{Math.trunc((item.neutralCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Balanced</div>
+                                    <div className="itemBuffInfo flex">{Math.trunc((item.buffCount / (item.nerfCount + item.neutralCount + item.buffCount) * 100))}% Buff</div>
                                 </div>
                             )}
                 </div>

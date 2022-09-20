@@ -74,6 +74,9 @@ const [buffItem] = useMutation(BUFF_ITEM_INCREMENT);
     items.BuffCont.map((item) => {
       buffItemFunction(item)
     })
+
+    window.location.reload(false);
+
   }
 
   const [items, setItems] = useState({
@@ -90,6 +93,7 @@ const [buffItem] = useMutation(BUFF_ITEM_INCREMENT);
       coordinateGetter: sortableKeyboardCoordinates
       })
   );
+
 
   return (
     <div>

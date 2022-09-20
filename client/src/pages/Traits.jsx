@@ -73,6 +73,9 @@ export default function Traits() {
     traits.BuffCont.map((synergy) => {
       buffSynergyFunction(synergy)
     })
+
+    window.location.reload(false);
+
   }
 
     const [traits, setTraits] = useState({
