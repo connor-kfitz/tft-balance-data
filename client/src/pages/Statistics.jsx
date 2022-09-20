@@ -16,20 +16,22 @@ export default function Statistics() {
         }
     }
 
-    function refreshPage() {
-        window.location.reload(false);
+    function updatePage() {
+        window.location.reload();
     }
-
 
     return (
         <div id="statsContainer">
-            <label for="stats">
-                <select id="stats" onChange={handleChange}>
-                    <option id="itemOption">Items</option>
-                    <option id="synergyOption">Synergies</option>
-                </select>
-            </label>
+            <div id="statsTab"className="flex">
+                <label htmlFor="stats">
+                    <select id="stats" onChange={handleChange}>
+                        <option id="itemOption">Items</option>
+                        <option id="synergyOption">Synergies</option>
+                    </select>
+                </label>
 
+                <button id="updateButton" onClick={updatePage}>Update Results</button>
+            </div>
 
             {(currentPage === 'Items') ? (
                 <ItemContainer/>

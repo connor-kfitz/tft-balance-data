@@ -11,6 +11,8 @@ export default function ItemContainer() {
 
     const items = data?.items || [];
 
+    console.log(items);
+
     return (
         <div>
             {(loading) ? (

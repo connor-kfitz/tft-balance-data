@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/items.css";
 
 import { DndContext, DragOverlay, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
@@ -9,6 +10,7 @@ import { Item } from "../components/items-components/SortableItem";
 
 import { useMutation } from "@apollo/client";
 import { NERF_ITEM_INCREMENT, NEUTRAL_ITEM_INCREMENT, BUFF_ITEM_INCREMENT } from "../utils/mutations";
+import { QUERY_ITEMS } from "../utils/queries"
 
 const wrapperStyle = {
     display: "flex",
@@ -17,9 +19,29 @@ const wrapperStyle = {
 
 export default function Items() {
 
-const [nerfItem] = useMutation(NERF_ITEM_INCREMENT);
-const [neutralItem] = useMutation(NEUTRAL_ITEM_INCREMENT);
-const [buffItem] = useMutation(BUFF_ITEM_INCREMENT);
+const [nerfItem, { error, loading }] = useMutation(NERF_ITEM_INCREMENT, {
+  refetchQueries:[
+    {
+      query: QUERY_ITEMS
+    }
+  ] 
+});
+const [neutralItem] = useMutation(NEUTRAL_ITEM_INCREMENT, {
+  refetchQueries:[
+    {
+      query: QUERY_ITEMS
+    }
+  ] 
+});
+const [buffItem] = useMutation(BUFF_ITEM_INCREMENT, {
+  refetchQueries:[
+    {
+      query: QUERY_ITEMS
+    }
+  ] 
+});
+
+const navigate = useNavigate()
 
 
   async function nerfItemFunction(input) {
@@ -61,22 +83,21 @@ const [buffItem] = useMutation(BUFF_ITEM_INCREMENT);
     }
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
+
+      items.NeutralCont.map((item) => {
+        neutralItemFunction(item)
+      })
     
-    items.NerfCont.map((item) => {
-      nerfItemFunction(item)
-    })
+      items.NerfCont.map((item) => {
+        nerfItemFunction(item)
+      })
 
-    items.NeutralCont.map((item) => {
-      neutralItemFunction(item)
-    })
+      items.BuffCont.map((item) => {
+        buffItemFunction(item)
+      })
 
-    items.BuffCont.map((item) => {
-      buffItemFunction(item)
-    })
-
-    window.location.reload(false);
-
+      navigate(`/statistics`);
   }
 
   const [items, setItems] = useState({
@@ -128,7 +149,9 @@ const [buffItem] = useMutation(BUFF_ITEM_INCREMENT);
         </DndContext>
       </div>
       <div id="itemSubmitCont">
-        <button onClick={handleSubmit}>Submit</button>
+        {/* <Link to="/statistics"> */}
+          <button onClick={handleSubmit}>Submit</button>
+        {/* </Link> */}
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ export default function ItemData(props) {
     return(
         <div id="itemStatCardCont" className="flex">
             {itemData.map((item) => (
-                <div className="itemStatCard flex">
+                <div className="itemStatCard flex" key={item.id}>
                     <div className="itemCardImage" style={{backgroundImage: `url("${itemList[(item.id - 1)].url}")`}} ></div>
                             {(checkZero(item)) ? (
                                 

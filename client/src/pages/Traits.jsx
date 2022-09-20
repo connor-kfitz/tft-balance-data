@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/traits.css";
 
 import { DndContext, DragOverlay, closestCorners, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
@@ -9,6 +10,7 @@ import { Trait } from "../components/synergies-components/SortableTrait";
 
 import { useMutation } from "@apollo/client";
 import { NERF_SYNERGY_INCREMENT, NEUTRAL_SYNERGY_INCREMENT, BUFF_SYNERGY_INCREMENT } from "../utils/mutations";
+import { QUERY_SYNERGIES } from "../utils/queries"
 
 const wrapperStyle = {
     display: "flex",
@@ -17,10 +19,31 @@ const wrapperStyle = {
 
 export default function Traits() {
 
-  const [nerfSynergy] = useMutation(NERF_SYNERGY_INCREMENT);
-  const [neutralSynergy] = useMutation(NEUTRAL_SYNERGY_INCREMENT);
-  const [buffSynergy] = useMutation(BUFF_SYNERGY_INCREMENT); 
-  
+  const [nerfSynergy] = useMutation(NERF_SYNERGY_INCREMENT, {
+    refetchQueries:[
+      {
+        query: QUERY_SYNERGIES
+      }
+    ] 
+  });
+  const [neutralSynergy] = useMutation(NEUTRAL_SYNERGY_INCREMENT, {
+    refetchQueries:[
+      {
+        query: QUERY_SYNERGIES
+      }
+    ] 
+});
+  const [buffSynergy] = useMutation(BUFF_SYNERGY_INCREMENT, {
+    refetchQueries:[
+      {
+        query: QUERY_SYNERGIES
+      }
+    ] 
+}); 
+
+  const navigate = useNavigate()
+
+
   async function nerfSynergyFunction(input) {
 
     try{
@@ -74,7 +97,7 @@ export default function Traits() {
       buffSynergyFunction(synergy)
     })
 
-    window.location.reload(false);
+    navigate(`/statistics`);
 
   }
 

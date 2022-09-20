@@ -15,7 +15,7 @@ export default function SynergyData(props) {
     return(
         <div id="itemStatCardCont" className="flex">
             {synergyData.map((synergy) => (
-                <div className="itemStatCard flex">
+                <div className="itemStatCard flex" key={synergy.id}>
                     <div className="itemCardImage" style={{backgroundImage: `url("${synergyList[(synergy.id - 1)].url}")`}} ></div>
                             {(checkZero(synergy)) ? (
                                 
