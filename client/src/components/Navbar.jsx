@@ -19,7 +19,7 @@ export default function Nav() {
                     </Link>
                     
                     <Link to="/synergies" id="link">
-                        <h1>Traits</h1>
+                        <h1>Synergies</h1>
                     </Link>
                     
                     <Link to="/statistics" id="link">
